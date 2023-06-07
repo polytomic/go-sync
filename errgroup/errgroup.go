@@ -57,6 +57,11 @@ func (g *Group) Wait() error {
 	return g.err
 }
 
+// Err returns the first non-nil error (if any) from the functions passed to Go.
+func (g *Group) Err() error {
+	return g.err
+}
+
 // Go calls the given function in a new goroutine.
 // It blocks until the new goroutine can be added without the number of
 // active goroutines in the group exceeding the configured limit.
